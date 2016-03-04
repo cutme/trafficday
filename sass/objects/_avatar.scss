@@ -1,0 +1,28 @@
+.o-avatar {
+	.o-media {
+		display: block;
+		margin: 0 auto 20px auto;
+	}
+	
+	&__name {
+		@include antialias;
+		position: relative;
+		margin-bottom: 15px;
+		font-size: em(24);
+		line-height: 1;
+		white-space: nowrap;
+		
+		@media screen and ( min-width: 480px ) and ( max-width: 768px ) {
+			font-size: em(20);
+		}
+
+		&:after {
+			display: block;
+			width: 100px;
+			height: 3px;
+			background-color: $red;
+			margin-top: 15px;
+			content: ' ';
+		}
+	}
+}

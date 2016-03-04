@@ -1,0 +1,18 @@
+.o-header {
+	margin-bottom: 1.6em;
+	text: {
+		align: center;
+		transform: uppercase;
+	}
+	font-size: em(30);
+	
+	&--big {
+		margin-bottom: 2em;
+		padding: 0 grid(50);
+		text-transform: none;
+		font: {
+			size: em(33);
+			weight: $light;
+		}
+	}
+}

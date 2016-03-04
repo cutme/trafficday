@@ -1,0 +1,51 @@
+.c-top {
+	@include antialias;
+	height: 840px;
+	background: {
+		image: url(../img/top.jpg);
+		repeat: no-repeat;
+		position: center;
+	}
+	text: {
+		align: center;
+		transform: uppercase;
+	}
+	color: white;
+
+	&__lead {
+		@include scut-center-transform;
+		padding-top: 170px;
+		font-size: em(44);
+	}
+	
+	&__city {
+		position: absolute;
+		width: 240px;
+		font-size: em(24);
+		line-height: 1;
+		
+		strong {
+			display: block;
+		}
+		
+		&--gdansk {
+			top: 300px;
+			left: grid(80);
+		}
+		
+		&--poznan {
+			top: 620px;
+			left: grid(20);
+		}
+		
+		&--warszawa {
+			top: 420px;
+			right: grid(20);
+		}
+		
+		&--krakow {
+			top: 740px;
+			right: grid(80);
+		}
+	}
+}

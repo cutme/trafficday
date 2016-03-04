@@ -1,0 +1,53 @@
+.c-nav-primary {
+	display: none;
+	right: 0; z-index: 5;
+	
+	@media screen and ( min-width: 800px ) {
+		@include scut-center-transform(y);
+		display: block;
+	}
+	
+	ul {
+		li {
+			@media screen and ( min-width: 800px ) {
+				float: left;
+				padding: 0 10px;
+			}
+			
+			@media screen and ( max-width: 1023px ) {
+				padding: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
+			
+			a {
+				display: block;
+				padding: 8px 15px;
+				line-height: 1;
+				text-transform: uppercase;
+				
+				@media screen and ( max-width: 799px ) {
+					background-color: white;
+					padding: 15px 20px;
+					border-bottom: 1px solid rgba(black, 0.1);
+				}
+
+				&.is-active,
+				&:hover {
+					
+					.no-mobile & {
+						background-color: $red;
+						color: white;
+					}
+				}
+			}
+		}
+	}
+	
+	&.is-mobile {
+		position: absolute;
+		width: 100%; top: 90px;
+	}
+}

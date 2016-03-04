@@ -1,0 +1,10 @@
+[class^="icon-"], [class*=" icon-"] {
+	@include icomoon;
+}
+
+.safari {
+	* {
+		-webkit-backface-visibility: hidden;
+		-webkit-transform-style: preserve-3d;
+	}
+}

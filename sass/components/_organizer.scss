@@ -1,0 +1,14 @@
+.c-organizer {
+	color: white;
+
+	&__txt {
+		float: left;
+		width: grid(280);
+	}
+	
+	&__video {
+		float: right;
+		width: grid(650);
+		padding-top: 10px;
+	}
+}

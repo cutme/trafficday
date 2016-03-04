@@ -1,0 +1,55 @@
+.c-contact {
+	background: {
+		image: url(../img/contact.jpg);
+		repeat: no-repeat;
+		position: center bottom;
+		color: #e8e8e8;
+	}
+	
+	a {
+		hover {
+			color: $red;
+		}
+	}
+	
+	&__details {
+		float: right;
+		width: grid(310);
+		font-size: em(13);
+	}
+	
+	&__social {
+		[class^="icon-"] {
+			display: inline-block;
+			margin: 0 5px 5px 0;
+			font-size: em(40);
+			
+			&:hover {
+				color: $red;
+			}
+		}
+	}
+	
+	address {
+		margin-bottom: 30px;
+	}
+	
+	.c-logo {
+		width: 180px;
+		margin-bottom: 30px;
+	}
+	
+	.o-avatar {
+		float: left;
+		width: grid(350);
+	}
+	
+	.o-avatar__txt {
+		font-size: em(16);
+	}
+	
+	.o-header {
+		float: left;
+		width: grid(270);
+	}
+}

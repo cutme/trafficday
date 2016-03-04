@@ -1,0 +1,20 @@
+.c-buy {
+	background: {
+		image: url(../img/buy.jpg);
+		repeat: no-repeat;
+		position: center bottom;
+		color: $blue;
+	}
+	
+	&__txt {
+		@include antialias;
+		float: left;
+		width: grid(450);
+		color: white;
+		
+		p {
+			margin-bottom: 1em;
+			text-align: justify;
+		}
+	}
+}

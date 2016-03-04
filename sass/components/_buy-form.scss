@@ -1,0 +1,67 @@
+.c-buy-form {
+	float: right;
+	width: grid(370);
+	padding-top: 10px;
+	font-size: em(14);
+
+	input[type=text],
+	input[type=tel],
+	input[type=email] {
+		height: 50px;
+		background-color: white;
+		padding: 0 20px;
+	}
+	
+	&__fields {
+		margin-bottom: 50px;
+	}
+	
+	&__num {
+		float: left;
+		width: grid(100, 370);
+		
+		input {
+			float: left;
+			width: 50px;
+			padding: 0;
+		}
+	}
+	
+	&__city {
+		float: left;
+		width: grid(270, 370);
+	}
+	
+	&__select {
+		float: right;
+		width: grid(140, 270);
+	}
+	
+	&__submit {
+		float: right;
+		position: relative; z-index: 5;
+		width: 200px;
+		text-align: center;
+		color: white;
+	}
+	
+	.o-btn {
+		display: block;
+		width: 100%;
+		padding: 0;
+	}
+	
+	.clear {
+		position: relative; z-index: 10;
+		margin-bottom: 10px;
+	}
+	
+	label {
+		@include antialias;
+		float: left;
+		padding-right: 5px;
+		line-height: 50px;
+		color: white;
+		white-space: nowrap;
+	}
+}

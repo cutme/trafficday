@@ -1,0 +1,30 @@
+body {
+	line-height: 1.4;
+	font: {
+		family: $text;
+		size: #{$base-font-size}px;
+		weight: $regular;
+	}
+	color: $black;
+}
+
+a {
+	@include hover;
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+strong {
+	@include antialias;
+	font-weight: $bold;
+}
+
+br {
+	@media screen and ( max-width: 768px ) {
+		display: none;
+	}
+}
+
+@include font-face-db( "icomoon", "icomoon");
+@include selection(white, $red);
