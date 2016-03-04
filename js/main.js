@@ -37,7 +37,7 @@ jQuery(function($) {
 					el.removeClass('is-active');
 					_t.addClass('is-active');
 					goToTarget($(t).offset().top - 90);
-					$('html').hasClass('mobile') && 
+					($('html').hasClass('mobile') || $(window).width() < 800) && 
 						n.removeClass('is-active').hide();
 						tr.removeClass('is-active');
 				});
