@@ -117,8 +117,40 @@ jQuery(function($) {
 			shTrigger();
 		}
 	};
+	var S = {
+		logotypes: function() {
+			var owl = $('.owl-carousel');
+			
+			owl.each(function() {
+				$(this).owlCarousel({
+					dots: false,
+					loop: true,
+					items: 4,
+					loop: true,
+					nav: true,
+					navText: ['',''],
+					smartSpeed: 450,
+					responsive: {
+						0: {
+							items: 2
+				        },
+				        480: {
+							items: 2
+				        },
+				        641: {
+							items: 3
+				        },
+				        769: {
+							items: 4
+				        }
+				    },
+				});
+			});
+		}
+	};
 	$(document).ready(function() {
 		L.init();
 		N.mobileNav();
+		S.logotypes();
 	});
 });

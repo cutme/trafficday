@@ -5,3 +5,43 @@
 		display: inline-block;
 	}
 }
+
+.owl-nav {
+	> div {
+		position: absolute;
+		top: 50%;
+		width: 50px;
+		height: 50px;
+		display: block;
+		margin-top: -25px;
+		text-align: center;
+		line-height: 50px;
+		font: {
+			size: 18px;
+			weight: $light;
+		}
+		
+		&:after {
+			position: absolute;
+	    	left: 0; top: 0;
+	    	width: 50px; height: 50px;
+	    	display: block;
+		}
+	}
+
+	.owl-prev {
+		left: -20px;		
+
+	    &:after {
+		    content: ' < ';
+	    }
+	}
+	
+	.owl-next {
+		right: -20px;
+		
+		&:after {
+			content: ' > ';
+		}
+	}
+}
