@@ -1,55 +1,116 @@
 .c-contact {
+	@include background-size(cover);
 	background: {
 		image: url(../img/contact.jpg);
 		repeat: no-repeat;
 		position: center bottom;
 		color: #e8e8e8;
 	}
-	
+
 	a {
 		hover {
 			color: $red;
 		}
 	}
-	
+
 	&__details {
 		float: right;
 		width: grid(310);
 		font-size: em(13);
+		
+		@media screen and ( max-width: 900px ) {
+			width: grid(400);
+		}
+		
+		@media screen and ( max-width: 640px ) {
+			width: grid(370, 640);
+		}
+		
+		@media screen and ( max-width: 479px ) {
+			width: 100%;
+			text-align: center;
+		}
 	}
-	
+
 	&__social {
 		[class^="icon-"] {
 			display: inline-block;
 			margin: 0 5px 5px 0;
 			font-size: em(40);
 			
+			&:last-of-type {
+				margin-right: 0;
+			}
+			
 			&:hover {
 				color: $red;
 			}
 		}
 	}
-	
+
 	address {
 		margin-bottom: 30px;
 	}
-	
+
 	.c-logo {
 		width: 180px;
 		margin-bottom: 30px;
+		
+		@media screen and ( max-width: 479px ) {
+			margin: 0 auto;
+		}
 	}
-	
+
 	.o-avatar {
 		float: left;
 		width: grid(350);
+		
+		@media screen and ( max-width: 900px ) {
+			width: grid(260);
+		}
+		
+		@media screen and ( max-width: 640px ) {
+			width: grid(230, 640);
+		}
+		
+		@media screen and ( max-width: 479px ) {
+			width: 100%;
+			margin-bottom: 60px;
+			text-align: center;
+		}
+		
+		.o-media {
+			margin: 0 0 20px 0;
+			
+			@media screen and ( max-width: 479px ) {
+				margin: 0 auto 20px auto;				
+			}
+		}
 	}
-	
+
 	.o-avatar__txt {
 		font-size: em(16);
+	}
+	
+	.o-avatar__name {
+		@media screen and ( max-width: 479px ) {
+			&:after {
+				margin: {
+					left: auto;
+					right: auto;
+				}
+			}
+		}
 	}
 	
 	.o-header {
 		float: left;
 		width: grid(270);
+		
+		@media screen and ( max-width: 640px ) {
+			@include clear;
+			float: none;
+			width: 100%;
+		}
 	}
 }
