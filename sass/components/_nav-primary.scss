@@ -33,6 +33,10 @@
 					padding: 15px 20px;
 					border-bottom: 1px solid rgba(black, 0.1);
 				}
+				
+				@media screen and ( min-width: 375px ) and ( max-width: 480px ) {
+					font-size: em(10);
+				}
 
 				&.is-active,
 				&:hover {
@@ -47,6 +51,7 @@
 	}
 	
 	&.is-mobile {
+		@include box-shadow(rgba(black, .4) 0 20px 30px );
 		position: absolute;
 		width: 100%; top: 90px;
 	}

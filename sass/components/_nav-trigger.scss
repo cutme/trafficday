@@ -51,18 +51,11 @@
 .c-nav-trigger {
 	position: absolute;
 	right: 20px;
+	top: 22px;
 	display: none;
 	width: 36px; height: 36px;
 	
 	@media screen and ( max-width: 799px ) {
 		display: block;
-	}
-	
-	@media screen and ( max-width: 768px ) {
-		display: block;
-	}
-	
-	@media screen and ( max-width: 480px ) {
-		top: 6px;
 	}
 }

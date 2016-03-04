@@ -1,5 +1,11 @@
 .c-organizer {
 	color: white;
+	
+	p {
+		@media screen and ( min-width: 375px ) and ( max-width: 480px ) {
+			font-size: em(10);
+		}
+	}
 
 	@media screen and ( min-width: 769px ) {
 		&__txt {

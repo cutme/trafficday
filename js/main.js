@@ -28,7 +28,7 @@ jQuery(function($) {
 	var L = {
 		go: function() {
 			var el = $('.js-go'),
-				t, _t;
+				t, _t, n = $('.c-nav-primary'), tr = $('.c-nav-trigger');
 			el.each(function() {
 				$(this).on('click', function(e) {
 					_t = $(this);
@@ -36,6 +36,8 @@ jQuery(function($) {
 					t = _t.attr('href');
 					el.removeClass('is-active');
 					_t.addClass('is-active');
+					n.removeClass('is-active').hide();
+					tr.removeClass('is-active');
 					goToTarget($(t).offset().top - 90);
 				});
 			});

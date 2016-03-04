@@ -68,12 +68,16 @@
 			vertical-align: middle;
 			line-height: 1.2;
 			
+			@media screen and ( max-width: 840px ) {
+				width: auto;
+			}
+			
 			@media screen and ( min-width: 480px ) {
 				font-size: em(18);
 			}
 		}
 	}
-	
+
 	&__txt {
 		font-size: em(13);
 		text-align: justify;
@@ -82,8 +86,12 @@
 		@media screen and ( max-width: 840px ) {
 			width: 100%;
 		}
+		
+		@media screen and ( min-width: 375px ) and ( max-width: 480px ) {
+			font-size: em(10);
+		}
 	}
-	
+
 	&__time {
 		width: grid(120);
 		
