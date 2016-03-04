@@ -13,15 +13,14 @@ function debouncer(func, timeout) {
 	};
 }
 jQuery(function($) {
-	function goToTarget(target) {
+	function goToTarget(t) {
 		$('html, body').animate({
-			scrollTop: target
+			scrollTop: t
 		}, {
 			duration: 1500,
 			easing: 'easeOutCubic'
 		});
 	}
-
 	function window_smaller_than(num) {
 		var d = ($(window).width() < num) ? true : false;
 		return d;
@@ -29,11 +28,14 @@ jQuery(function($) {
 	var L = {
 		go: function() {
 			var el = $('.js-go'),
-				t;
+				t, _t;
 			el.each(function() {
 				$(this).on('click', function(e) {
+					_t = $(this);
 					e.preventDefault();
-					t = $(this).attr('href');
+					t = _t.attr('href');
+					el.removeClass('is-active');
+					_t.addClass('is-active');
 					goToTarget($(t).offset().top - 90);
 				});
 			});
