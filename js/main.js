@@ -36,10 +36,10 @@ jQuery(function($) {
 					t = _t.attr('href');
 					el.removeClass('is-active');
 					_t.addClass('is-active');
+					goToTarget($(t).offset().top - 90);
 					$('html').hasClass('mobile') && 
 						n.removeClass('is-active').hide();
 						tr.removeClass('is-active');
-					goToTarget($(t).offset().top - 90);
 				});
 			});
 		},
