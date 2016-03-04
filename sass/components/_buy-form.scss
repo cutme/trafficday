@@ -1,8 +1,20 @@
 .c-buy-form {
-	float: right;
-	width: grid(370);
-	padding-top: 10px;
+	width: auto;
+	max-width: 600px;
+	margin: 0 auto;
 	font-size: em(14);
+	
+	@media screen and ( min-width: 841px ) {
+		float: right;
+		width: 380px;
+		padding-top: 10px;
+	}
+	
+	@media screen and ( min-width: 769px ) {
+		
+		//width: grid(370);
+		
+	}
 
 	input[type=text],
 	input[type=tel],
@@ -18,23 +30,45 @@
 	
 	&__num {
 		float: left;
-		width: grid(100, 370);
+		width: 100px;
+		
+		@media screen and ( max-width: 768px ) {
+			width: grid(200, 728);
+		}
+		
+		@media screen and ( max-width: 375px ) {
+			width: grid(240, 728);
+		}
 		
 		input {
-			float: left;
+			float: right;
 			width: 50px;
 			padding: 0;
 		}
 	}
 	
 	&__city {
-		float: left;
-		width: grid(270, 370);
+		float: right;
+		width: 280px;
+		
+		@media screen and ( max-width: 768px ) {
+			width: grid(528, 728);
+		}
+		
+		@media screen and ( max-width: 375px ) {
+			width: grid(488, 728);
+		}
+		
+		label {
+			@media screen and ( max-width: 479px ) {
+				display: none;
+			}
+		}
 	}
 	
 	&__select {
 		float: right;
-		width: grid(140, 270);
+		width: 140px;
 	}
 	
 	&__submit {
@@ -58,10 +92,17 @@
 	
 	label {
 		@include antialias;
-		float: left;
-		padding-right: 5px;
+		float: right;
+		padding-right: 8px;
 		line-height: 50px;
 		color: white;
 		white-space: nowrap;
+		text-align: right;
+		
+		.short {
+			@media screen and ( max-width: 1023px ) {
+				display: none;
+			}
+		}
 	}
 }

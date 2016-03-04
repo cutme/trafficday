@@ -1,14 +1,32 @@
 .c-organizer {
 	color: white;
 
+	@media screen and ( min-width: 769px ) {
+		&__txt {
+			float: left;
+			width: grid(280);
+		}
+		
+		&__video {
+			float: right;
+			width: grid(650);
+			padding-top: 10px;
+		}
+	}
+	
 	&__txt {
-		float: left;
-		width: grid(280);
+		@media screen and ( max-width: 768px ) {
+			margin-bottom: 80px;
+		}
 	}
 	
 	&__video {
-		float: right;
-		width: grid(650);
-		padding-top: 10px;
+		@media screen and ( max-width: 768px ) {
+			margin-bottom: 80px;
+			
+			.o-media {
+				margin: 0 auto;
+			}
+		}
 	}
 }
