@@ -12,16 +12,7 @@ function debouncer(func, timeout) {
 		}, timeout);
 	};
 }
-
 jQuery(function($) {
-	function exist(o) {
-		
-		/* exist('.js-bigcaro') && S.bigcaro(); */
-
-		d = ($(o).length>0) ? true : false;
-		return d;
-	}
-	
 	function goToTarget(target) {
 		$('html, body').animate({
 			scrollTop: target
@@ -32,23 +23,20 @@ jQuery(function($) {
 	}
 
 	function window_smaller_than(num) {
-		d = ($(window).width() < num) ? true : false;
+		var d = ($(window).width() < num) ? true : false;
 		return d;
 	}
-
 	var L = {
 		go: function() {
-			var el = $('.js-go'), t;
-			
+			var el = $('.js-go'),
+				t;
 			el.each(function() {
 				$(this).on('click', function(e) {
 					e.preventDefault();
 					t = $(this).attr('href');
-					goToTarget( $(t).offset().top - 90 );
+					goToTarget($(t).offset().top - 90);
 				});
-			})
-			
-			
+			});
 		},
 		magnific: function() {
 			$('.mfp-video').magnificPopup({
@@ -61,14 +49,15 @@ jQuery(function($) {
 						}
 					}
 				},
-				fixedContentPos:true,
+				fixedContentPos: true,
 				type: 'iframe',
 				mainClass: 'mfp-fade contact'
 			});
 		},
 		modernizrSupport: function() {
-			var m = Modernizr, placeholder = m.input.placeholder, svg = m.svg;
-			if (svg === false) {
+			var m = Modernizr.addTest('svgasimg', document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Image', '1.1'));
+
+			function replaceSvgImg() {
 				var i = document.getElementsByTagName("img"),
 					j, y;
 				for (j = i.length; j--;) {
@@ -78,6 +67,7 @@ jQuery(function($) {
 					}
 				}
 			}
+			m.svgasimg ? true : replaceSvgImg();
 		},
 		select: function() {
 			$('select').selectbox();
@@ -89,23 +79,22 @@ jQuery(function($) {
 			L.select();
 		}
 	};
-	
-	var N =  {
+	var N = {
 		mobileNav: function() {
 			function shTrigger() {
-				var t = $('.c-nav-trigger'), n = $('.c-nav-primary'), status = false;
-				
+				var t = $('.c-nav-trigger'),
+					n = $('.c-nav-primary'),
+					status = false;
+
 				function init() {
 					n.addClass('is-mobile');
 					status = true;
 				}
-
 				t.on('click', function(e) {
 					e.preventDefault();
 					$(this).toggleClass('is-active');
 					n.slideToggle();
 				});
-				
 				$(window).resize(debouncer(function(e) {
 					if (window_smaller_than(800)) {
 						if (status === false) {
@@ -119,18 +108,15 @@ jQuery(function($) {
 						}
 					}
 				}));
-				
 				if (window_smaller_than(800)) {
 					init();
 				}
 			}
-
 			shTrigger();
 		}
-	}
+	};
 	$(document).ready(function() {
 		L.init();
 		N.mobileNav();
 	});
 });
-
