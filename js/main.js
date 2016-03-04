@@ -36,8 +36,9 @@ jQuery(function($) {
 					t = _t.attr('href');
 					el.removeClass('is-active');
 					_t.addClass('is-active');
-					n.removeClass('is-active').hide();
-					tr.removeClass('is-active');
+					$('html').hasClass('mobile') && 
+						n.removeClass('is-active').hide();
+						tr.removeClass('is-active');
 					goToTarget($(t).offset().top - 90);
 				});
 			});
